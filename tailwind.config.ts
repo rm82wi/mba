@@ -1,6 +1,7 @@
 import type { Config } from "tailwindcss";
 
 const config: Config = {
+  darkMode: "class",                        // <–– WICHTIG
   content: [
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
@@ -11,10 +12,10 @@ const config: Config = {
         brand: {
           blue: "#003B73",
           yellow: "#F6C800",
-          gray: "#1F2933"
-        }
-      }
-    }
+          gray: "#1F2933",
+        },
+      },
+    },
   },
   plugins: [],
 };
