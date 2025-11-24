@@ -1,6 +1,6 @@
 import Link from "next/link";
-import { machines } from "@/data/machines";
-import { MachineCard } from "@/components/MachineCard";
+import { machines } from "/data/machines";
+import { MachineCard } from "/components/MachineCard";
 
 export default function BaumaschinenPage() {
   const sortedMachines = [...machines].sort((a, b) =>
