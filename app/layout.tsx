@@ -1,10 +1,11 @@
 import type { Metadata } from "next";
 import "@/styles/globals.css";
+import { Providers } from "./providers";
 
 export const metadata: Metadata = {
-  title: "MBA – Baumaschinenverleih & KFZ-Service",
+  title: "MBA – Maschinen, Bagger, Anhänger",
   description:
-    "MBA – Bagger und Baumaschinenverleih sowie KFZ-Service Station.",
+    "MBA – Baumaschinenverleih und KFZ-Service Station.",
 };
 
 export default function RootLayout({
@@ -13,8 +14,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="de">
-      <body className="min-h-screen">{children}</body>
+    <html lang="de" suppressHydrationWarning>
+      <body className="min-h-screen antialiased">
+        <Providers>{children}</Providers>
+      </body>
     </html>
   );
 }
