@@ -4,12 +4,12 @@ import Image from "next/image";
 export default function HomePage() {
   return (
     <main className="min-h-screen bg-slate-950 text-slate-50 flex flex-col">
-      {/* Top-Bar / Navigation */}
+      {/* Header / Top-Bar */}
       <header className="border-b border-slate-800 bg-slate-950/80 backdrop-blur">
         <div className="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between gap-4">
           <Link href="/" className="flex items-center gap-3">
             <div className="relative h-10 w-10 rounded-xl bg-slate-900 border border-slate-700 flex items-center justify-center overflow-hidden">
-              {/* Hauptlogo, leicht invertiert für Dark-Mode */}
+              {/* Hauptlogo, invertiert für Dark Mode */}
               <Image
                 src="/logos/mba-main.png"
                 alt="MBA Logo"
@@ -55,78 +55,38 @@ export default function HomePage() {
       </header>
 
       {/* Hero-Bereich */}
-      <section className="flex-1 flex items-center justify-center px-4 py-10">
-        <div className="max-w-6xl mx-auto grid gap-10 lg:grid-cols-[minmax(0,1.4fr)_minmax(0,1fr)] items-center">
-          {/* Linke Seite: Hauptmarke */}
-          <div className="space-y-8">
+      <section className="px-4 py-10 flex-1 flex items-center">
+        <div className="max-w-6xl mx-auto w-full space-y-10">
+          {/* Headline + Intro */}
+          <div className="max-w-3xl space-y-4">
             <div className="inline-flex items-center gap-2 rounded-full border border-slate-700 bg-slate-900/70 px-3 py-1 text-[11px] text-slate-300">
               <span className="h-2 w-2 rounded-full bg-emerald-400 animate-pulse" />
-              <span>Regionaler Partner für Bau & KFZ</span>
+              <span>Ihr Partner für Bauprojekte & KFZ-Service</span>
             </div>
 
-            <div className="space-y-4">
-              <h1 className="text-4xl md:text-5xl font-bold tracking-tight">
-                MBA
-                <span className="block text-xl md:text-2xl text-slate-300 mt-2">
-                  Maschinen · Bagger · Anhänger
-                </span>
-              </h1>
-              <p className="text-sm md:text-base text-slate-300 max-w-xl">
-                Zwei starke Gewerbe unter einem Dach: moderner
-                Baumaschinenverleih für Baustellen aller Größen und eine
-                zuverlässige KFZ-Service Station für PKW, Transporter und
-                leichte Nutzfahrzeuge.
-              </p>
-            </div>
+            <h1 className="text-4xl md:text-5xl font-bold tracking-tight">
+              MBA
+              <span className="block text-xl md:text-2xl text-slate-300 mt-2">
+                Maschinen · Bagger · Anhänger
+              </span>
+            </h1>
 
-            {/* Kurze Übersicht der zwei Bereiche */}
-            <div className="grid gap-4 md:grid-cols-2">
-              <div className="rounded-2xl border border-slate-800 bg-slate-900/70 p-4 text-sm space-y-2">
-                <p className="text-[11px] uppercase tracking-[0.18em] text-brand.yellow">
-                  Gewerbe 1
-                </p>
-                <p className="font-semibold">Baumaschinenverleih</p>
-                <p className="text-xs text-slate-300">
-                  Bagger, Radlader, Rüttelplatten, Anhänger – mit transparenter
-                  Preisübersicht.
-                </p>
-                <Link
-                  href="/baumaschinen"
-                  className="inline-flex items-center gap-1 text-xs text-brand.yellow hover:underline mt-1"
-                >
-                  Maschinen & Preise ansehen
-                  <span>→</span>
-                </Link>
-              </div>
-
-              <div className="rounded-2xl border border-slate-800 bg-slate-900/70 p-4 text-sm space-y-2">
-                <p className="text-[11px] uppercase tracking-[0.18em] text-emerald-400">
-                  Gewerbe 2
-                </p>
-                <p className="font-semibold">KFZ-Service Station</p>
-                <p className="text-xs text-slate-300">
-                  Wartung, Inspektionen, Diagnose und HU-Vorbereitung für Ihre
-                  Fahrzeuge.
-                </p>
-                <Link
-                  href="/kfz-service"
-                  className="inline-flex items-center gap-1 text-xs text-emerald-300 hover:underline mt-1"
-                >
-                  Leistungen ansehen
-                  <span>→</span>
-                </Link>
-              </div>
-            </div>
+            <p className="text-sm md:text-base text-slate-300">
+              Moderner Baumaschinenverleih und professionelle KFZ-Service
+              Station unter einem Dach. Wählen Sie einen Bereich und erhalten
+              Sie alle Infos zu Leistungen, Maschinen und Preisen.
+            </p>
           </div>
 
-          {/* Rechte Seite: große Kacheln mit Logos */}
-          <div className="space-y-5">
-            {/* Maschinenverleih-Kachel */}
+          {/* Kacheln (nur diese 2) */}
+          <div className="space-y-6 max-w-3xl w-full">
+            {/* Maschinenverleih */}
             <Link
               href="/baumaschinen"
-              className="group block rounded-3xl border border-slate-800 bg-gradient-to-br from-slate-900 via-slate-900 to-slate-800 p-6 shadow-xl hover:shadow-brand.yellow/20 hover:-translate-y-1 transition-all duration-300"
+              className="group block rounded-3xl border border-slate-800 bg-gradient-to-br from-slate-900 to-slate-800 p-6 shadow-xl hover:shadow-brand.yellow/20 hover:-translate-y-1 transition-all duration-300"
             >
-              <div className="flex items-center gap-4">
+              <div className="flex items-center gap-6">
+                {/* Logo */}
                 <div className="relative h-20 w-20 rounded-2xl bg-slate-950 border border-slate-700 flex items-center justify-center overflow-hidden">
                   <Image
                     src="/logos/maschinenverleih.png"
@@ -135,32 +95,37 @@ export default function HomePage() {
                     className="object-contain invert"
                   />
                 </div>
-                <div className="space-y-1">
-                  <p className="text-xs uppercase tracking-[0.18em] text-brand.yellow">
+
+                <div className="flex-1 space-y-1">
+                  <p className="text-xs uppercase tracking-[0.20em] text-brand.yellow">
                     Maschinen · Bagger · Anhänger
                   </p>
+
                   <h2 className="text-xl font-semibold">
                     MBA Maschinenverleih
                   </h2>
-                  <p className="text-xs text-slate-300">
+                  <p className="text-sm text-slate-300">
                     Verfügbarkeit & Mietpreise direkt online einsehbar.
                   </p>
+
+                  <p className="text-xs text-slate-400 mt-2 group-hover:text-brand.yellow transition-colors">
+                    Zur Maschinenübersicht
+                  </p>
                 </div>
-              </div>
-              <div className="mt-4 flex items-center justify-between text-xs text-slate-300">
-                <p>Zur Maschinenübersicht</p>
-                <span className="text-lg group-hover:translate-x-1 transition-transform">
+
+                <span className="text-lg text-slate-400 group-hover:text-brand.yellow transition-colors">
                   →
                 </span>
               </div>
             </Link>
 
-            {/* KFZ-Service-Kachel */}
+            {/* KFZ-Service */}
             <Link
               href="/kfz-service"
-              className="group block rounded-3xl border border-slate-800 bg-gradient-to-br from-slate-900 via-slate-900 to-slate-800 p-6 shadow-xl hover:shadow-emerald-300/20 hover:-translate-y-1 transition-all duration-300"
+              className="group block rounded-3xl border border-slate-800 bg-gradient-to-br from-slate-900 to-slate-800 p-6 shadow-xl hover:shadow-emerald-300/20 hover:-translate-y-1 transition-all duration-300"
             >
-              <div className="flex items-center gap-4">
+              <div className="flex items-center gap-6">
+                {/* Logo */}
                 <div className="relative h-20 w-20 rounded-2xl bg-slate-950 border border-slate-700 flex items-center justify-center overflow-hidden">
                   <Image
                     src="/logos/kfz-service.png"
@@ -169,19 +134,23 @@ export default function HomePage() {
                     className="object-contain invert"
                   />
                 </div>
-                <div className="space-y-1">
-                  <p className="text-xs uppercase tracking-[0.18em] text-emerald-300">
+
+                <div className="flex-1 space-y-1">
+                  <p className="text-xs uppercase tracking-[0.20em] text-emerald-300">
                     KFZ-Service
                   </p>
+
                   <h2 className="text-xl font-semibold">MBA KFZ-Service</h2>
-                  <p className="text-xs text-slate-300">
+                  <p className="text-sm text-slate-300">
                     Werkstatttermin, Diagnose & Wartung aus einer Hand.
                   </p>
+
+                  <p className="text-xs text-slate-400 mt-2 group-hover:text-emerald-300 transition-colors">
+                    Zu Leistungen & Service
+                  </p>
                 </div>
-              </div>
-              <div className="mt-4 flex items-center justify-between text-xs text-slate-300">
-                <p>Zu Leistungen & Service</p>
-                <span className="text-lg group-hover:translate-x-1 transition-transform">
+
+                <span className="text-lg text-slate-400 group-hover:text-emerald-300 transition-colors">
                   →
                 </span>
               </div>
@@ -191,7 +160,7 @@ export default function HomePage() {
       </section>
 
       {/* Footer */}
-      <footer className="border-t border-slate-800">
+      <footer className="border-top border-slate-800">
         <div className="max-w-6xl mx-auto px-4 py-4 flex flex-col md:flex-row items-center justify-between gap-3 text-[11px] text-slate-500">
           <p>© {new Date().getFullYear()} MBA – Maschinen, Bagger, Anhänger.</p>
           <div className="flex items-center gap-4">
